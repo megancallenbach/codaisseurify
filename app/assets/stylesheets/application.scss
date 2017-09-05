@@ -15,10 +15,14 @@ html, body {
 
 .container {
   max-width: 920px;
+  .alert {
+    margin-bottom: 0;
+  }
 }
 
 // NAVBAR
 .navbar {
+  margin-bottom: 0;
   .navbar-brand {
     color: white;
   }
@@ -61,18 +65,28 @@ html, body {
 }
 
 .row {
+  h4 {
+    margin-top: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
   .box {
-    background-color: #D3D2CF;
-    padding: 30px;
+    background-color: #faf4e2;
+    padding: 20px;
     margin: 50px;
     box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
-    h4 {
-      color: #653675;
-      font-family: 'Roboto', sans-serif;
-      font-weight: 400;
-    }
-    img {
-      
+    .image-container {
+      width: 100%;
+      height: auto;
+      a {
+        margin: 0 auto;
+        .box-image {
+          display: block;
+
+          width: 100%;
+          overflow: hidden;
+        }
+      }
     }
   }
   text-align: center;

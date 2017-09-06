@@ -1,0 +1,30 @@
+<%= form_for @song do |f| %>
+  <div class="form-group">
+    <label>Song Name</label>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Song Genre</label>
+    <%= f.text_field :genre, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Song Duration in Minutes</label>
+    <%= f.number_field :length, :step => "0.01", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Release Date</label>
+    <%= f.date_field :release_date, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Artist</label>
+    <p><%= f.collection_select :artist_id, Artist.order(:name), :id, :name, class: "form-control" %></p>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>

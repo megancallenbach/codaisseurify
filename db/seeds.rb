@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Artist.all.destroy
+Artist.destroy_all
 
 artist1 = Artist.create!(name: "Sia", genre: "Pop")
-artist2 = Artist.create!(name: "50cent" genre: "HipHop")
+artist2 = Artist.create!(name: "50cent", genre: "HipHop")
 
 song1 = Song.create!(name: "Big girls cry", length: 3.42, genre: "Pop", artist: artist1)
 song2 = Song.create!(name: "Chandelier", length: 3.42, genre: "Pop", artist: artist1)

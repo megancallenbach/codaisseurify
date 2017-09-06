@@ -1,10 +1,8 @@
 class Artist < ApplicationRecord
-  has_many :songs
+  has_many :songs, dependent: :destroy
 
-  def sort_by_name
-
+  def alphabetize
   end
-  def sort_by_name_reverse
-
+  def alphabetize_reversed
   end
 end

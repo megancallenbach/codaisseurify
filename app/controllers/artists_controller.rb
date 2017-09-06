@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
 
+
   def index
     @artists = Artist.all
   end
@@ -39,9 +40,9 @@ class ArtistsController < ApplicationController
 
   def artist_params
     params
-      .require(:name)
+      .require(:artist)
       .permit(
-        :genre
+        :genre, :name
       )
   end
 end

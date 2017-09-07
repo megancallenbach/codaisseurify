@@ -35,9 +35,14 @@ body {
   }
 }
 
-.show-artist {
+.artist-details {
   color: white;
-  width: 300px;
+  max-width: 250px;
+}
+
+.artist-image {
+  max-width: 250px;
+  margin-top: 50px;
 }
 
 .new-artist {

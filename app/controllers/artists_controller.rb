@@ -7,6 +7,7 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
+    @photos = @artist.photos
   end
 
   def new
@@ -17,6 +18,9 @@ class ArtistsController < ApplicationController
     @artist = Artist.new(artist_params)
 
     if @artist.save
+      image_params.each do |image|
+        @artist.photos.create(image: image)
+      end
       redirect_to @artist, notice: "Artist Created Successfully"
     else
       render :new
@@ -25,12 +29,16 @@ class ArtistsController < ApplicationController
 
   def edit
     @artist = Artist.find(params[:id])
+    @photos = @artist.photos
   end
 
   def update
     @artist = Artist.find(params[:id])
     if @artist.update(artist_params)
-      redirect_to @artist, notice: "Artist updated"
+      image_params.each do |image|
+        @artist.photos.create(image: image)
+      end
+      redirect_to @artist, notice: "Artist successfully updated"
     else
       render :edit
     end
@@ -43,7 +51,11 @@ class ArtistsController < ApplicationController
   end
 
   private
+  def image_params
+    params[:images].present? ? params.require(:images) : []
+  end
 
+  private
   def artist_params
     params
       .require(:artist)

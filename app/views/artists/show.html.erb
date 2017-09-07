@@ -23,6 +23,8 @@
     <%= image_tag("artist.jpg") %>
 
   </div>
-
-
 </div>
+
+<%= link_to "Add Song", new_song_path, class: "btn btn-primary" %>
+<%= link_to "Edit Artist", edit_artist_path, class: "btn btn-primary" %>
+<%= link_to "Delete Artist", artist_path(@artist.id), method: :delete, data: {confirm: "NOTE: Deleting an artist will delete all associated songs. \nDo you wish to continue?" }, class: "btn btn-danger" %>

@@ -1,4 +1,17 @@
 <%= form_for @song do |f| %>
+
+  <div class="form-group">
+    <label>Artist</label>
+    <div class="row">
+      <div class="col-xs-8">
+        <%= f.collection_select :artist_id, Artist.order(:name), :id, :name, class: "form-control" %>
+      </div>
+      <div class="col-xs-4">
+        <%= link_to "Create Artist", new_artist_path, class: "btn btn-default" %>
+      </div>
+    </div>
+  </div>
+
   <div class="form-group">
     <label>Song Name</label>
     <%= f.text_field :name, class: "form-control" %>
@@ -17,11 +30,6 @@
   <div class="form-group">
     <label>Release Date</label>
     <%= f.date_field :release_date, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <label>Artist</label>
-    <p><%= f.collection_select :artist_id, Artist.order(:name), :id, :name, class: "form-control" %></p>
   </div>
 
   <div class="actions">

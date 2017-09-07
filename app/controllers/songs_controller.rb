@@ -15,7 +15,7 @@ class SongsController < ApplicationController
     @song = Song.new(song_params)
 
     if @song.save
-      redirect_to @song, notice: "Song Created Successfully"
+      redirect_to songs_path, notice: "Song Created Successfully"
     else
       render :new
     end
@@ -32,6 +32,12 @@ class SongsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @song = Song.find(params[:id])
+    @song.destroy
+    redirect_to songs_path
   end
 
   private

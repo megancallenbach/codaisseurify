@@ -1,11 +1,18 @@
 <div class="artist-list">
+
+
+  <div class="row">
   <h1> List of Artists </h1>
-
     <% @artists.each do |artist| %>
-      <p><%= link_to artist.name, artist_path(artist) %></p>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <p class="artist-name"><%= link_to artist.name, artist_path(artist) %></p>
+      <p><%= link_to image_tag("artist.jpg", class: "small-image"), artist_path(artist) %> </p>
+    </div>
     <% end %>
-
-    <%= link_to "Create Artist", new_artist_path, class: "btn btn-primary" %>
-  
-
+</div>
+</div>
+<div class="links-div">
+<hr />
+<%= link_to "Create New Artist", new_artist_path, class: "btn btn-primary" %>
+<%= link_to "Create New Song", new_song_path, class: "btn btn-primary" %>
 </div>

@@ -36,7 +36,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     if @artist.update(artist_params)
       image_params.each do |image|
-        @artist.photos.create(image: image)
+        @artist.photos.create!(image: image)
       end
       redirect_to @artist, notice: "Artist successfully updated"
     else

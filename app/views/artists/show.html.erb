@@ -21,13 +21,16 @@
 
   <div class="col-xs-6">
     <div class="artist-image">
-    <% @artist.photos.each do |photo| %>
-      <%= image_tag photo.image, class: "artist-image" %>
-    <% end %>
+      <% @artist.photos.each do |photo| %>
+          <%= image_tag photo.image.thumbnail %>
+      <% end %>
     </div>
   </div>
 </div>
 
-<%= link_to "Add Song", new_song_path, class: "btn btn-primary" %>
-<%= link_to "Edit Artist", edit_artist_path, class: "btn btn-primary" %>
+<%= link_to "Add Song", new_song_path, class: "btn btn-success" %>
+<%= link_to "Edit Artist", edit_artist_path, class: "btn btn-success" %>
 <%= link_to "Delete Artist", artist_path(@artist.id), method: :delete, data: {confirm: "NOTE: Deleting an artist will delete all associated songs. \nDo you wish to continue?" }, class: "btn btn-danger" %>
+<br/>
+<br />
+<%= link_to "Back to List of Artists", artists_path, class: "btn btn-primary" %>

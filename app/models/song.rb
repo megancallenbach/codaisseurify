@@ -1,4 +1,4 @@
 class Song < ApplicationRecord
   belongs_to :artist
-  validates :genre, :length, :name, presence: true
+  validates :name, presence: true
 end

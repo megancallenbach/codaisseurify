@@ -7,6 +7,7 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
+    @songs = @artist.songs
     @photos = @artist.photos
   end
 
@@ -16,7 +17,6 @@ class ArtistsController < ApplicationController
 
   def create
     @artist = Artist.new(artist_params)
-
     if @artist.save
       image_params.each do |image|
         @artist.photos.create(image: image)

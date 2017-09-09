@@ -12,7 +12,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Artists", artists_path %></li>
-        <li><%= link_to "Songs", songs_path %></li>
+        <li><%= link_to "Songs", artist_songs_path(:artist_id) %></li>
       </ul>
     </div>
   </div>

@@ -8,12 +8,17 @@ RSpec.describe Artist, type: :model do
 
   describe "association with artist" do
     it { is_expected.to have_many :songs}
-  
+
     let(:artist) {create :artist}
     let!(:song) {create :song, artist: artist}
+    let!(:photo) {create :photo, artist: artist}
 
     it "deletes associated songs" do
       expect { artist.destroy }.to change(Song, :count).by(-1)
+    end
+
+    it "deletes associated photos" do
+      expect { artist.destroy }.to change(Photo, :count).by(-1)
     end
   end
 

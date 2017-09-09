@@ -15,6 +15,6 @@ describe "Navigation" do
 
     click_link "Songs"
 
-    expect(current_path). to eq(songs_path)
+    expect(current_path). to eq(artist_songs_path(:artist_id))
   end
 end

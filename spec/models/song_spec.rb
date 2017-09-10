@@ -7,9 +7,8 @@ RSpec.describe Song, type: :model do
 
   describe "association with artist" do
   let(:artist) { create :artist }
-
+  let!(:song) { create :song, artist: artist}
     it "belongs to an artist" do
-      song = artist.songs.build(name: "Breakaway")
       expect(song.artist).to eq(artist)
     end
   end

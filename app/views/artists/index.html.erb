@@ -3,14 +3,16 @@
 
   <div class="row">
   <h1> List of Artists </h1>
-
-  <h5><%= link_to "Sort by Name A-Z", artists_path(order: 'name') %></h5>
-  <h5><%= link_to "Sort by Name Z-A", artists_path(order: 'name_desc') %></h5>
-  <h5><%= link_to "Sort by Newest", artists_path(order: 'created') %></h5>
-  <h5><%= link_to "Sort by Oldest", artists_path(order: 'created_desc') %></h5>
-
+  <br/>
+  <div class="col-xs-12">
+    <%= link_to "Sort by Name A-Z", artists_path(order: 'name'), class: "sort-button" %>
+    <%= link_to "Sort by Name Z-A", artists_path(order: 'name_desc'), class: "sort-button" %>
+    <%= link_to "Sort by Newest", artists_path(order: 'created'), class: "sort-button" %>
+    <%= link_to "Sort by Oldest", artists_path(order: 'created_desc'), class: "sort-button" %>
+  </div>
     <% @artists.each do |artist| %>
     <div class="col-xs-12 col-sm-6 col-md-4">
+      <br/>
       <p class="artist-name"><%= link_to artist.name, artist_path(artist) %></p>
       <% artist.photos.each do |photo| %>
         <p><%= link_to image_tag(photo.image.thumbnail, class: "square-images"), artist_path(artist) %> </p>

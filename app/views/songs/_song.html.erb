@@ -1,0 +1,31 @@
+<%= form_for (song) do |f| %>
+
+  <% if song.errors.any? %>
+    <div id="error_explanation">
+      <h4 class="white"><%= pluralize(song.errors.count, "error") %> prohibited this comment from being saved:</h4>
+      <ul>
+      <% song.errors.full_messages.each do |msg| %>
+        <li class="white"><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <h2 class="white">Add Song to: <%= song.artist.name %></h2>
+  </div>
+
+  <div class="form-group">
+    <label>Song Name</label>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Release Date</label>
+    <%= f.date_field :release_date, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>

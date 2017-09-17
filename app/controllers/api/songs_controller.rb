@@ -31,8 +31,8 @@ skip_before_action :verify_authenticity_token
     song.destroy
 
     respond_to do |format|
-        format.html { redirect_to artist_path(@artist), notice: 'Song successfully deleted' }
-        format.json { render status: 200, location: @artist }
+      format.html { redirect_to artist_path(@artist), notice: 'Song successfully deleted' }
+      format.json { render status: 200, location: @artist }
     end
   end
 

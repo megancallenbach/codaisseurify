@@ -13,7 +13,7 @@
         <li data-artist-id="<%= @artist.id %>" id="<%= song.id %>" class="song-name">
           <p><%=song.name%></p>
 
-          <a href="/api/artists/<%= @artist.id%>/songs/<%= song.id%>/edit" class="btn btn-primary">Edit</a>
+          <a href="/artists/<%= @artist.id%>/songs/<%= song.id%>/edit" class="btn btn-primary">Edit</a>
           <a href="/api/artists/<%= @artist.id %>/songs/<%=song.id%>" data-method="delete" rel="nofollow" class="btn btn-primary delete-song">Delete</a>
         <!-- <p>Duration: <%=song.length%> minutes</p> -->
         <!-- <li>Release Date: <%=song.release_date%></li> -->

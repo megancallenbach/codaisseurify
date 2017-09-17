@@ -14,13 +14,13 @@ class SongsController < ApplicationController
   end
 
   def create
-    artist = Artist.find(params[:artist_id])
-    @song = artist.songs.create(song_params)
-    if @song.save
-      redirect_to @song.artist, notice: "Song Created Successfully"
-    else
-      render :new
-    end
+    # artist = Artist.find(params[:artist_id])
+    # @song = artist.songs.create(song_params)
+    # if @song.save
+    #   redirect_to @song.artist, notice: "Song Created Successfully"
+    # else
+    #   render :new
+    # end
   end
 
   def edit
@@ -42,7 +42,7 @@ class SongsController < ApplicationController
     artist = Artist.find(params[:artist_id])
     @song = artist.songs.find(params[:id])
     @song.destroy
-    redirect_to artist_songs_path
+    redirect_to @song.artist
   end
 
   private

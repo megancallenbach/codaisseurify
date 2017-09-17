@@ -13,7 +13,7 @@ describe "Navigation Links" do
 
     it "links to songs page" do
       click_link "Songs"
-      expect(current_path).to eq(artist_songs_path(:artist_id))
+      expect(current_path).to eq(songs_path)
     end
   end
 
@@ -31,14 +31,14 @@ describe "Navigation Links" do
   describe "Songs Page" do
     let(:artist) { create :artist }
     let!(:song) { create :song, artist: artist }
-    before { visit artist_songs_path(:artist_id)}
+    before { visit songs_path}
     it "links to edit song page" do
       click_link "Edit"
       expect(current_path).to eq(edit_artist_song_path(artist, song))
     end
     it "links to delete song" do
       click_link "Delete"
-      expect(current_path).to eq(artist_songs_path(artist))
+      expect(current_path).to eq(artist_path(artist))
     end
   end
 end

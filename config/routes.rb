@@ -11,7 +11,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :artists do
-      resources :songs
+      resources :songs do
+        collection do
+          delete "remove_multiple"
+        end
+      end
     end
   end
 

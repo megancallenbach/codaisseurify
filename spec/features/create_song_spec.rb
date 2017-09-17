@@ -4,9 +4,9 @@ describe "Create a Song" do
   let!(:artist) {create :artist}
 
   it "successfully creates the song" do
-    visit new_artist_song_path(artist.id)
-    fill_in("song_name", :with => 'Hello World')
+    visit artist_path(artist)
+    fill_in("song-name", :with => 'Hello World')
     click_on "Save"
-    expect(page).to have_content "Song Created Successfully"
+    expect(page).to have_content("Hello World")
   end
 end

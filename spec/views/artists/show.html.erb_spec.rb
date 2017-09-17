@@ -12,6 +12,5 @@ describe "Artist Show Page" do
 
   it "shows artist song facts" do
   expect(page).to have_text(artist.songs.name)
-  expect(page).to have_text(artist.songs.length)
   end
 end

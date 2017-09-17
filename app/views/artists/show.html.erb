@@ -25,17 +25,6 @@
       </ul>
     </div>
       <%= render "songs/song", song: @artist.songs.build %>
-      <!-- <div class="form-group">
-        <h2 class="white">Add Song to: <%= @artist.name %></h2>
-      </div>
-
-      <div class="form-group">
-        <label>Song Name</label>
-        <input type="text" class="form-control" id="song-name">
-        <div class="actions">
-          <input type="submit" class="btn btn-primary" id="add-song">
-        </div>
-      </div> -->
   </div>
 
   <div class="col-xs-6">
@@ -46,6 +35,8 @@
     </div>
   </div>
 </div>
+
+<a href="/api/artists/<%= @artist.id %>/songs/remove_multiple" data-method="delete" rel="nofollow" class="btn btn-primary delete-all-songs">Delete All Songs</a>
 
 <%#= link_to "Add Song", new_artist_song_path(@artist), class: "btn btn-success" %>
 <%= link_to "Edit Artist", edit_artist_path, class: "btn btn-success" %>
